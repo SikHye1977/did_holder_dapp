@@ -17,26 +17,14 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import Home from './src/screen/Home';
+import StackNavigator from './src/navigation/StackNavigator';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
     <NavigationContainer>
-      <Home/>
+      <StackNavigator/>
     </NavigationContainer>
   );
 }

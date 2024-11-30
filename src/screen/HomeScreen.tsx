@@ -1,12 +1,12 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, TouchableOpacity} from 'react-native';
 
-function Home() {
+function Home({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.titleText}>UXM <Text style={styles.text}>HOLDER</Text></Text>
       <SafeAreaView style={styles.body}>
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => {navigation.navigate('Connection')}}>
           <Text>CONNECTION</Text>
         </TouchableOpacity>
       </SafeAreaView>
