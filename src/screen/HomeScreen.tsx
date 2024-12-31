@@ -1,48 +1,54 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {SafeAreaView, StyleSheet, Text, View, TouchableOpacity, Vibration} from 'react-native';
 
-function Home({navigation}) {
+import type { InitConfig } from '@credo-ts/core'
+import { Agent } from '@credo-ts/core'
+import { agentDependencies } from '@credo-ts/react-native'
+import { StackParamList } from '../navigation/StackNavigator';
+import { StackScreenProps } from '@react-navigation/stack';
+import { StackNavigations } from '../constants';
+import Footer from '../components/Footer';
+
+// const config: InitConfig = {
+//   label: 'docs-agent-react-native',
+//   walletConfig: {
+//     id: 'wallet-id',
+//     key: 'testkey0000000000000000000000000',
+//   },
+// }
+// const agent = new Agent({
+//   config,
+//   dependencies: agentDependencies,
+// })
+
+function Home( ) {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.titleText}>UXM <Text style={styles.text}>HOLDER</Text></Text>
-      <SafeAreaView style={styles.body}>
-        <TouchableOpacity style={styles.card} onPress={() => {navigation.navigate('Connection')}}>
-          <Text>CONNECTION</Text>
-        </TouchableOpacity>
+      <SafeAreaView style={styles.content}>
+        <Text>this is home</Text>
       </SafeAreaView>
     </SafeAreaView>
+    // <SafeAreaView style={styles.container}>
+    //   <Text style={styles.titleText}>UXM <Text style={styles.text}>HOLDER</Text></Text>
+    //   <SafeAreaView style={styles.body}>
+    //     <TouchableOpacity style={styles.card} onPress={() => {navigation.navigate(StackNavigations.CONNECTION)}}>
+    //       <Text>CONNECTION</Text>
+    //     </TouchableOpacity>
+    //   </SafeAreaView>
+    // </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
-  container : {
-    marginTop : 50,
-    alignItems : "center",
+  container: {
+    flex: 1,
+    position: 'relative',
   },
-  body : {
-    marginTop : 40
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  titleText : {
-    fontWeight : 'bold',
-    fontSize : 40,
-  },
-  text : {
-    fontWeight : 'normal',
-    fontSize : 40
-  },
-  card : {
-    marginTop : 40,
-    backgroundColor : 'white',
-    height : 200,
-    width : 200,
-    alignItems : 'center',
-    justifyContent : 'center',
-    borderRadius : 20,
-    shadowColor: '#000', // 그림자 색상
-    shadowOffset: { width: 0, height: 2 }, // 그림자 위치 조정
-    shadowOpacity: 0.25, // 그림자 투명도
-    shadowRadius: 4, // 그림자 반경
-  }
 });
 
 export default Home;

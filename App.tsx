@@ -18,6 +18,26 @@ import {
   View,
 } from 'react-native';
 import StackNavigator from './src/navigation/StackNavigator';
+import Footer from './src/components/Footer';
+
+// Setting For Credo
+// import type { InitConfig } from '@credo-ts/core'
+// import { Agent } from '@credo-ts/core'
+// import { agentDependencies } from '@credo-ts/react-native'
+
+// const config: InitConfig = {
+//   label: 'docs-agent-react-native',
+//   walletConfig: {
+//     id: 'wallet-id',
+//     key: 'testkey0000000000000000000000000',
+//   },
+// }
+
+// const agent = new Agent({
+//   config,
+//   dependencies: agentDependencies,
+// })
+
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -25,6 +45,7 @@ function App(): JSX.Element {
   return (
     <NavigationContainer>
       <StackNavigator/>
+      <Footer/>
     </NavigationContainer>
   );
 }
